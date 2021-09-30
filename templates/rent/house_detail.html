@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>House: {{ house.house_name }}</h1>
+
+  <p><strong>Tenant:</strong> <a href="">{{ house.tenant }}</a></p> <!-- Tenant detail link not yet defined -->
+  <p><strong>Summary:</strong> {{ house.summary }}</p>
+  <p><strong>Caretaker:</strong> {{ house.caretaker.all|join:", " }}</p>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Rental Instance</h4>
+
+    {% for copy in house.rent_set.all %}
+      <hr>
+      <p class="{% if copy.status == 'G' %}text-success{% elif copy.status == 'r' %}text-danger{% else %}text-warning{% endif %}">
+        {{ copy.get_status_display }}
+      </p>
+       <p><strong>Payment date: {{ copy.payment_date }}</strong></p>
+      {% if copy.status != 'G' %}
+        <p><strong>There is a problem with Rent-payment:</strong></p>
+      {% endif %}
+      <p><strong>Amount:</strong> {{ copy.amount }}</p>
+      <p class="text-muted"><strong>Id:</strong> {{ copy.id }}</p>
+    {% endfor %}
+  </div>
+{% endblock %}
