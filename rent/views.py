@@ -7,6 +7,9 @@ from .models import *
 from django.views import generic
 
 
+def landing(request):
+    return render(request, 'landing.html')
+
 def index(request):
     """View function for home page of site."""
 
