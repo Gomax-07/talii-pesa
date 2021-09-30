@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Talii-pesa </h1>
+    <br>
+  <p>Welcome to Talii-pesa.</p>
+        <br>
+        <br>
+
+  <p>The app has the following record counts:</p>
+  <ul>
+    <li><strong>Houses:</strong> {{ num_houses }}</li>
+    <li><strong>Rental instances:</strong> {{ num_rent }}</li>
+    <li><strong>Payment Instances:</strong> {{ num_rent_paid }}</li>
+    <li><strong>Tenants:</strong> {{ num_tenants }}</li>
+  </ul>
+{% endblock %}
