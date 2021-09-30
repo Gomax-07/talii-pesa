@@ -1,0 +1,9 @@
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+body{
+    background: linear-gradient(to right, rgba(0, 255, 0, 0.31), rgba(65, 198, 28, 0.76));
+}
