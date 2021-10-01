@@ -44,15 +44,15 @@ class RentModelForm(forms.ModelForm):
         fields = (
             'first_name',
             'last_name',
-            'date_of_birth',
-            'date_of_entry',
+            'payment_date',
+            'status',
         )
 
 
 class RentForm(forms.Form):
-    first_name = forms.CharField()
-    last_name = forms.CharField()
-    date_of_birth = forms.DateField()
+    house = forms.CharField()
+    amount = forms.IntegerField()
+    payment_date = forms.DateField()
     status = forms.CharField()
 
 
@@ -61,10 +61,10 @@ class TenantModelForm(forms.ModelForm):
     class Meta:
         model = Tenant
         fields = (
-            'house_name',
-            'tenant',
-            'summary',
-            'caretaker',
+            'first_name',
+            'last_name',
+            'date_of_birth',
+            'date_of_entry',
         )
 
 
