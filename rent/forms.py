@@ -59,7 +59,7 @@ class RentForm(forms.Form):
 # Tenant forms
 class TenantModelForm(forms.ModelForm):
     class Meta:
-        model = House
+        model = Tenant
         fields = (
             'house_name',
             'tenant',
@@ -68,7 +68,7 @@ class TenantModelForm(forms.ModelForm):
         )
 
 
-class HouseForm(forms.Form):
+class TenantForm(forms.Form):
     house_name = forms.CharField()
     tenant = forms.CharField()
     summary = forms.CharField()
