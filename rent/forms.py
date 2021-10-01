@@ -71,5 +71,5 @@ class TenantModelForm(forms.ModelForm):
 class TenantForm(forms.Form):
     first_name = forms.CharField()
     last_name = forms.CharField()
-    summa = forms.CharField()
-    Caretaker = forms.CharField()
+    date_of_birth = forms.DateField()
+    date_of_entry = forms.DateField()
