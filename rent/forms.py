@@ -42,8 +42,8 @@ class RentModelForm(forms.ModelForm):
     class Meta:
         model = Rent
         fields = (
-            'first_name',
-            'last_name',
+            'house',
+            'amount',
             'payment_date',
             'status',
         )
