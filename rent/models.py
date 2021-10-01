@@ -22,7 +22,7 @@ class House(models.Model):
     # Tenant as a string rather than object because it hasn't been declared yet in the file
     tenant = models.ForeignKey('Tenant', on_delete=models.SET_NULL, null=True)
 
-    summary = models.TextField(max_length=1000, help_text='Enter a brief description of the house location')
+    summary = models.CharField(max_length=250, help_text='Enter a brief description of the house location')
     # ManyToManyField used because caretaker can maintain many  Houses.  Houses can cover many caretakers.
     # Caretaker class has already been defined so we can specify the object above.
     caretaker = models.ManyToManyField(Caretaker, help_text='Select a caretaker for this House')

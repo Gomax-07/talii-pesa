@@ -18,9 +18,9 @@
             <div class="line"></div>
         </div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Houses</a></li>
-            <li><a href="#">Projects</a></li>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'house_create' %}">Create House</a></li>
+            <li><a href="{% url 'tenant_create' %}">Create Tenant</a></li>
         </ul>
     </nav>
 

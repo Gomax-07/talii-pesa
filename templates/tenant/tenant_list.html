@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %} {% block content %}
+<h1>Tenant List</h1>
+
+{% if tenant_list %}
+<ul>
+    {% for tenant in tenant_list %}
+    <li>
+        <a href="{{ house.get_absolute_url }}">{{ tenant.last_name }}</a>
+        <br> Date born: {{tenant.date_of_birth}}
+        <p>Entry date to residence:{{tenant.date_of_entry}}</p>
+
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>There are no tenants.</p>
+{% endif %} {% endblock %}

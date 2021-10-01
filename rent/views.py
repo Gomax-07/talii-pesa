@@ -1,7 +1,7 @@
 from django.http import Http404, HttpResponse
 from django.shortcuts import redirect, render
 
-from rent.forms import HouseModelForm
+from rent.forms import HouseModelForm, RentModelForm, TenantModelForm
 
 # Create your views here.
 
@@ -66,8 +66,32 @@ def house_create(request):
         form = HouseModelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("/house/")
+            return redirect("/rent/house/")
     context = {
         "form": form
     }
     return render(request, "rent/house_create.html", context)
+
+
+def tenant_create(request):
+    form = TenantModelForm()
+    if request.method == "POST":
+        form = TenantModelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/rent/house/")
+    context = {
+        "form": form
+    }
+    return render(request, "tenant/tenant_create.html", context)
+
+class TenantListView(generic.ListView):
+    model = Tenant
+    paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get the context
+        context = super(TenantListView, self).get_context_data(**kwargs)
+        # Create any data and add it to the context
+        context['some_data'] = 'This is just some data'
+        return context

@@ -13,6 +13,7 @@ urlpatterns = [
 
 
 #Tenants_paths
-    
+     path('house/tenant_create/', tenant_create, name='tenant_create'),
+     path('house/tenant/', views.TenantListView.as_view(), name='tenant'),
 ]
 
