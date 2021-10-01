@@ -1,5 +1,7 @@
 from django.http import Http404, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+
+from rent.forms import HouseModelForm
 
 # Create your views here.
 
@@ -57,3 +59,15 @@ class HouseListView(generic.ListView):
 
 class HouseDetailView(generic.DetailView):
     model = House
+
+def house_create(request):
+    form = HouseModelForm()
+    if request.method == "POST":
+        form = HouseModelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/house/")
+    context = {
+        "form": form
+    }
+    return render(request, "rent/house_create.html", context)
