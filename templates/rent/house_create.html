@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% load crispy_forms_filters %} {% block content %}
+<hr>
+<a href="{% url 'house_list' %}">Back to House</a>
+<hr>
+<h1>Create House</h1>
+<form action="" method="post" background-color: green;>
+    {% csrf_token %} {{ form|crispy }}
+    <button type="submit">Submit</button>
+</form>
+
+<style>
+    form {
+        background-color: green;
+    }
+</style>
+{% endblock content %}
