@@ -1,4 +1,4 @@
- {% load crispy_forms_filters %} {% block content %}
+{% block content %}
 <div class="title">
     <a href="{% url 'house' %}">Back</a>
     <h1>Create House</h1>
@@ -11,7 +11,7 @@
     <div class="box">
         <div class="container">
             <form action="" method="post" background-color: green;>
-                {% csrf_token %} {{ form|crispy }}
+                {% csrf_token %} {{ form.as_p }}
                 <button type="submit">Submit</button>
             </form>
         </div>
