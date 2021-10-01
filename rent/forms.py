@@ -54,3 +54,6 @@ class RentForm(forms.Form):
     amount = forms.IntegerField()
     payment_date = forms.DateField()
     status = forms.CharField()
+
+
+# Tenant forms
