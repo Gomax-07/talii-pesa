@@ -69,7 +69,7 @@ class TenantModelForm(forms.ModelForm):
 
 
 class TenantForm(forms.Form):
-    house_name = forms.CharField()
-    tenant = forms.CharField()
-    summary = forms.CharField()
+    first_name = forms.CharField()
+    last_name = forms.CharField()
+    summa = forms.CharField()
     Caretaker = forms.CharField()
