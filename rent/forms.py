@@ -57,3 +57,19 @@ class RentForm(forms.Form):
 
 
 # Tenant forms
+class HouseModelForm(forms.ModelForm):
+    class Meta:
+        model = House
+        fields = (
+            'house_name',
+            'tenant',
+            'summary',
+            'caretaker',
+        )
+
+
+class HouseForm(forms.Form):
+    house_name = forms.CharField()
+    tenant = forms.CharField()
+    summary = forms.CharField()
+    Caretaker = forms.CharField()
