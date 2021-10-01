@@ -45,7 +45,7 @@ class RentModelForm(forms.ModelForm):
             'first_name',
             'last_name',
             'date_of_birth',
-            'status',
+            'date_of_entry',
         )
 
 
