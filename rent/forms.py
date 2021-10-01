@@ -57,7 +57,7 @@ class RentForm(forms.Form):
 
 
 # Tenant forms
-class HouseModelForm(forms.ModelForm):
+class TenantModelForm(forms.ModelForm):
     class Meta:
         model = House
         fields = (
