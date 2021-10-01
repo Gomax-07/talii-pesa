@@ -52,7 +52,7 @@ class RentModelForm(forms.ModelForm):
 class RentForm(forms.Form):
     first_name = forms.CharField()
     last_name = forms.CharField()
-    payment_date = forms.DateField()
+    date_of_birth = forms.DateField()
     status = forms.CharField()
 
 
