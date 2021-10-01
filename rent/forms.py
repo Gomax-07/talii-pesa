@@ -50,7 +50,7 @@ class RentModelForm(forms.ModelForm):
 
 
 class RentForm(forms.Form):
-    house = forms.CharField()
+    first_name = forms.CharField()
     amount = forms.IntegerField()
     payment_date = forms.DateField()
     status = forms.CharField()
