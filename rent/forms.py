@@ -43,8 +43,8 @@ class RentModelForm(forms.ModelForm):
         model = Rent
         fields = (
             'first_name',
-            'last',
-            'payment_date',
+            'last_name',
+            'date_of_birth',
             'status',
         )
 
